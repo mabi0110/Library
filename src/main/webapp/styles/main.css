@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+    font: 16px calibri;
+    color: #9f98b1;
+    background: url("../images/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#title > label {
+    font-size: 40px;
+    letter-spacing: 4px;
+    margin: 20px auto;
+    text-align: center;
+    width: 300px;
+    text-shadow: 0 0 1px silver;
+}
+
+#mainPage, #registerPanel {
+    width: 400px;
+    margin: 100px auto;
+    padding: 10px 0;
+    background: #544c6e;
+    border: 1px solid #9f98b1;
+    -webkit-box-shadow: 0 0 2px #9f98b1;
+    -moz-box-shadow: 0 0 2px #9f98b1;
+    box-shadow: 0 0 2px #9f98b1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#buttonsSection {
+    margin: 30px auto 20px;
+}
+
+label {
+    display: block;
+    width: 300px;
+    margin: 15px auto 0;
+    padding: 5px 15px;
+    text-shadow: 0 0 1px silver;
+    text-align: left;
+}
+
+.ui-button {
+    border-color: #9f98b1!important;
+    background-color: #484062!important;
+    color: #9f98b1!important;
+}
+
+.ui-inputfield {
+    display: block!important;
+    width: 300px!important;
+    margin: 0 auto!important;
+    padding: 5px 15px!important;
+    border: 1px solid #9f98b1!important;
+    outline: 1px solid #9f98b1!important;
+    font-size: 18px!important;
+    color: #9f98b1!important;
+    background-color: #635b8b!important;
+}
+
