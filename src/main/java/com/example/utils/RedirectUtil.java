@@ -13,7 +13,8 @@ public class RedirectUtil {
     public static final String REGISTER_FORM = "/registerForm.xhtml";
     public static final String EMPLOYEE_PAGES = "/employeePages";
     public static final String USER_PAGES = "/userPages";
-
+    private static final String USER_MAIN_PAGE = "/userMainPage.xhtml";
+    private static final String EMPLOYEE_MAIN_PAGE = "/employeeMainPage.xhtml";
 
 
     public static void redirectToIndexPage() throws IOException {
@@ -28,9 +29,19 @@ public class RedirectUtil {
         redirect(GENERAL_PAGES + REGISTER_FORM);
     }
 
+    public static void redirectToUserPage() throws IOException {
+        redirect(USER_PAGES + USER_MAIN_PAGE);
+    }
 
+    public static void redirectToEmployeePage() throws IOException {
+        redirect(EMPLOYEE_PAGES + EMPLOYEE_MAIN_PAGE);
+    }
+    
     private static void redirect(String path) throws IOException{
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
         externalContext.redirect(externalContext.getRequestContextPath() + path);
     }
+
+
+
 }

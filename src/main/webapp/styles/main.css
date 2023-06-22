@@ -18,7 +18,7 @@ body {
     text-shadow: 0 0 1px silver;
 }
 
-#mainPage, #registerPanel {
+#mainPage, #registerPanel, #loginPanel {
     width: 400px;
     margin: 100px auto;
     padding: 10px 0;
