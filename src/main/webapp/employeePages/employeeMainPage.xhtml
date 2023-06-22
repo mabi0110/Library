@@ -4,8 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Employee"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Panel pracownika</title>
+    <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+</h:head>
+<h:body>
+    <div id="employeePanel">
+        <h:outputLabel>Panel pracownika</h:outputLabel>
+        <h:outputLabel value="#{loginController.loggedPerson.firstName}"/>
+        <h:outputLabel value="#{loginController.loggedPerson.lastName}"/>
+    </div>
+</h:body>
 </html>
