@@ -18,7 +18,7 @@ body {
     text-shadow: 0 0 1px silver;
 }
 
-#mainPage, #registerPanel, #loginPanel, #userPanel, #employeePanel, #addUserForm {
+#mainPage, #registerPanel, #loginPanel, #userPanel, #employeePanel, #addUserForm, #removeUserForm, #findUserForm {
     width: 400px;
     margin: 10px auto;
     background: #544c6e;
