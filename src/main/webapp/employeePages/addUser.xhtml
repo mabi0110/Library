@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Dodaj użytkownika</title>
+   <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+</h:head>
+<h:body>
+   <div id="employeePanel">
+      <ui:include src="employeeNavigationTemplate.xhtml"/>
+      <div id="addUserForm">
+         <h:form>
+            <h:outputLabel for="firstName">Imię</h:outputLabel>
+            <p:inputText id="firstName" type="text" value="#{employeeController.selectedUserFirstName}"/>
+            <h:outputLabel for="lastName">Nazwisko</h:outputLabel>
+            <p:inputText id="lastName" type="text" value="#{employeeController.selectedUserLastName}"/>
+            <h:outputLabel for="login">Login</h:outputLabel>
+            <p:inputText id="login" type="text" value="#{employeeController.selectedUserLogin}"/>
+            <h:outputLabel for="password">Hasło</h:outputLabel>
+            <p:inputText id="password" type="password" value="#{employeeController.selectedUserPassword}"/>
+            <h:outputLabel for="passwordRepeated">Powtórz hasło</h:outputLabel>
+            <p:inputText id="passwordRepeated" type="password"/>
+            <div id="buttonsSection">
+               <p:commandButton value="Dodaj" action="#{employeeController.addUser()}"/>
+            </div>
+         </h:form>
+      </div>
+   </div>
+</h:body>
+</html>

@@ -12,27 +12,36 @@
 </h:head>
 <h:body>
     <div id="navigationPanel">
-        <p:menubar>
-            <p:menuitem value="Strona główna" outcome="userMainPage.xhtml">
-                <f:param name="i" value="0"/>
-            </p:menuitem>
-            <p:submenu label="Wypożyczenia" icon="pi pi-fw pi-user">
-                <p:menuitem value="Aktualne wypożyczenia" icon="pi pi-fw pi-plus" outcome="userMainPage.xhtml">
-                    <f:param name="i" value="1"/>
-                </p:menuitem>
-                <p:menuitem value="Historia wypożyczeń" icon="pi pi-fw pi-trash" outcome="userMainPage.xhtml">
-                    <f:param name="i" value="2"/>
-                </p:menuitem>
-            </p:submenu>
-            <p:submenu label="Rezerwacje" icon="pi pi-fw pi-user">
-                <p:menuitem value="Aktualne rezerwacje" icon="pi pi-fw pi-plus" outcome="userMainPage.xhtml">
-                    <f:param name="i" value="3"/>
-                </p:menuitem>
-                <p:menuitem value="Szukaj" icon="pi pi-fw pi-trash" outcome="userMainPage.xhtml">
-                    <f:param name="i" value="4"/>
-                </p:menuitem>
-            </p:submenu>
-        </p:menubar>
+        <p:toolbar>
+            <p:toolbarGroup align="left">
+                <p:menubar>
+                    <p:menuitem value="Strona główna" outcome="userMainPage.xhtml">
+                        <f:param name="i" value="0"/>
+                    </p:menuitem>
+                    <p:submenu label="Wypożyczenia">
+                        <p:menuitem value="Aktualne wypożyczenia" outcome="userMainPage.xhtml">
+                            <f:param name="i" value="1"/>
+                        </p:menuitem>
+                        <p:menuitem value="Historia wypożyczeń" outcome="userMainPage.xhtml">
+                            <f:param name="i" value="2"/>
+                        </p:menuitem>
+                    </p:submenu>
+                    <p:submenu label="Rezerwacje">
+                        <p:menuitem value="Aktualne rezerwacje" outcome="userMainPage.xhtml">
+                            <f:param name="i" value="3"/>
+                        </p:menuitem>
+                        <p:menuitem value="Szukaj" outcome="userMainPage.xhtml">
+                            <f:param name="i" value="4"/>
+                        </p:menuitem>
+                    </p:submenu>
+                </p:menubar>
+            </p:toolbarGroup>
+            <p:toolbarGroup align="right">
+                <p:button icon="pi pi-fw pi-user"/>
+                <p:button icon="pi pi-fw pi-bell"/>
+                <p:commandButton icon="pi pi-fw pi-sign-out"/>
+            </p:toolbarGroup>
+        </p:toolbar>
     </div>
 </h:body>
 </html>

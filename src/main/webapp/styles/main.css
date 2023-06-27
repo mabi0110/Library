@@ -18,10 +18,9 @@ body {
     text-shadow: 0 0 1px silver;
 }
 
-#mainPage, #registerPanel, #loginPanel, #userPanel, #employeePanel {
+#mainPage, #registerPanel, #loginPanel, #userPanel, #employeePanel, #addUserForm {
     width: 400px;
-    margin: 100px auto;
-    /*padding: 10px 0;*/
+    margin: 10px auto;
     background: #544c6e;
     border: 1px solid #9f98b1;
     -webkit-box-shadow: 0 0 2px #9f98b1;

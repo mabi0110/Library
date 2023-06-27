@@ -12,6 +12,7 @@
 </h:head>
 <h:body>
     <div id="employeePanel">
+        <ui:include src="employeeNavigationTemplate.xhtml"/>
         <h:outputLabel>Panel pracownika</h:outputLabel>
         <h:outputLabel value="#{loginController.loggedPerson.firstName}"/>
         <h:outputLabel value="#{loginController.loggedPerson.lastName}"/>
