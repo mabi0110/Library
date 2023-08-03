@@ -18,7 +18,8 @@ body {
     text-shadow: 0 0 1px silver;
 }
 
-#mainPage, #registerPanel, #loginPanel, #userPanel, #employeePanel, #addUserForm, #removeUserForm, #findUserForm {
+#mainPage, #registerPanel, #loginPanel, #userPanel, #employeePanel, #addUserForm, #removeUserForm, #removeBookForm,
+#usersListForm, #addBookForm, #table {
     width: 400px;
     margin: 10px auto;
     background: #544c6e;
@@ -33,7 +34,7 @@ body {
 
 #userPanel, #employeePanel {
     width: 800px;
-    height: 600px;
+    height: 1000px;
 }
 
 #buttonsSection {

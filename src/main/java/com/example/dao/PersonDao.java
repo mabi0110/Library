@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -72,7 +71,7 @@ public class PersonDao {
         return Optional.empty();
     }
 
-    public List<Person> findUsers(){
+    public List<Person> getUsersFromDb(){
         List<Person> users = new ArrayList<>();
         String sql = String.format("SELECT id, firstName, lastName, login, pass, accountType from person " +
                 "where accountType='%s'", "USER");

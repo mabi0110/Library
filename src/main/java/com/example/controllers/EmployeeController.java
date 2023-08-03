@@ -1,7 +1,10 @@
 package com.example.controllers;
 
-import com.example.PersonNoExistException;
+import com.example.BookNotExistsException;
+import com.example.PersonNotExistException;
+import com.example.dao.BookDao;
 import com.example.dao.PersonDao;
+import com.example.models.Book;
 import com.example.models.Person;
 import com.example.utils.RedirectUtil;
 import lombok.Getter;
@@ -24,15 +27,31 @@ public class EmployeeController {
     private String selectedUserPassword;
     private final String DEFAULT_ACCOUNT_TYPE = "USER";
     private final PersonDao personDao = new PersonDao();
+    private final BookDao bookDao = new BookDao();
     private Person personToRegister;
+    private Book bookToRegister;
     private Person personToRemove;
+    private Book bookToRemove;
+    private String selectedBookTitle;
+    private String selectedBookISBN;
+    private String selectedBookPublisher;
+    private int selectedBookPublicationYear;
 
     private Person createPerson(){
-        return new Person(selectedUserFirstName,
+        return new Person(
+                selectedUserFirstName,
                 selectedUserLastName,
                 selectedUserLogin,
                 selectedUserPassword,
                 DEFAULT_ACCOUNT_TYPE);
+    }
+
+    private Book createBook() {
+        return new Book(
+                selectedBookTitle,
+                selectedBookISBN,
+                selectedBookPublisher,
+                selectedBookPublicationYear);
     }
     public void addUser() throws IOException {
         personToRegister = createPerson();
@@ -40,19 +59,37 @@ public class EmployeeController {
         RedirectUtil.redirectToEmployeePage();
     }
 
+    public void addBook() throws IOException {
+        bookToRegister = createBook();
+        bookDao.save(bookToRegister);
+        RedirectUtil.redirectToEmployeePage();
+    }
+
     public void removeUser() throws IOException {
         personToRemove = getPersonFromDb();
-        System.out.println(personToRemove);
         personDao.remove(personToRemove.getId());
+        RedirectUtil.redirectToEmployeePage();
+    }
+
+    public void removeBook() throws IOException {
+        bookToRemove = getBookFromDb();
+        bookDao.remove(bookToRemove.getId());
         RedirectUtil.redirectToEmployeePage();
     }
 
     private Person getPersonFromDb() {
         Optional<Person> personOptional = personDao.findUserWithFirstAndLastName(selectedUserFirstName, selectedUserLastName);
-        return personOptional.orElseThrow(PersonNoExistException::new);
+        return personOptional.orElseThrow(PersonNotExistException::new);
     }
 
-    public List<Person> findUsers(){
-        return personDao.findUsers();
+    private Book getBookFromDb() {
+        Optional<Book> bookOptional = bookDao.findBookWithTitle(selectedBookTitle);
+        return bookOptional.orElseThrow(BookNotExistsException::new);
     }
+
+    public List<Person> findUsers() {
+        return personDao.getUsersFromDb();
+    }
+
+
 }

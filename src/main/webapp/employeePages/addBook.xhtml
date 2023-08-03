@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Dodaj użytkownika</title>
+    <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+</h:head>
+<h:body>
+    <div id="employeePanel">
+        <ui:include src="employeeNavigationTemplate.xhtml"/>
+        <div id="addBookForm">
+            <h:outputLabel>Dodaj książkę</h:outputLabel>
+            <h:form>
+                <h:outputLabel for="title">Tytuł</h:outputLabel>
+                <p:inputText id="title" type="text" value="#{employeeController.selectedBookTitle}"/>
+                <h:outputLabel for="isbn">ISBN</h:outputLabel>
+                <p:inputText id="isbn" type="text" value="#{employeeController.selectedBookISBN}"/>
+                <h:outputLabel for="publisher">Wydawnictwo</h:outputLabel>
+                <p:inputText id="publisher" type="text" value="#{employeeController.selectedBookPublisher}"/>
+                <h:outputLabel for="publicationYear">Rok wydania</h:outputLabel>
+                <p:inputNumber id="publicationYear" value="#{employeeController.selectedBookPublicationYear}"/>
+                <h:outputLabel for="authorFirstName">Imię autora</h:outputLabel>
+                <p:inputText id="authorFirstName" type="text"/>
+                <h:outputLabel for="authorLastName">Nazwisko autora</h:outputLabel>
+                <p:inputText id="authorLastName" type="text"/>
+                <div id="buttonsSection">
+                    <p:commandButton value="Dodaj" action="#{employeeController.addBook()}"/>
+                </div>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

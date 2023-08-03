@@ -17,7 +17,6 @@ public class Person {
     private String pass;
     private String accountType;
     private List<Book> borrowedBooks = new ArrayList<>();
-
     private List<Book> reservedBooks = new ArrayList<>();
 
     public Person(String firstName, String lastName, String login, String pass, String accountType) {

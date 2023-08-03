@@ -13,22 +13,24 @@
 <h:body>
     <div id="employeePanel">
         <ui:include src="employeeNavigationTemplate.xhtml"/>
-        <div id="findUserForm">
+        <div id="usersListForm">
             <h:form>
-                <p:dataTable var="user" value="#{employeeController.findUsers()}"  scrollable="true" scrollHeight="250">
-                    <p:column headerText="Imie">
-                        <h:outputText value="#{user.firstName}"/>
-                    </p:column>
-                    <p:column headerText="Nazwisko">
-                        <h:outputText value="#{user.lastName}"/>
-                    </p:column>
-                    <p:column headerText="Login">
-                        <h:outputText value="#{user.login}"/>
-                    </p:column>
-                    <p:column headerText="Hasło">
-                        <h:outputText value="#{user.pass}"/>
-                    </p:column>
-                </p:dataTable>
+                <div id="table">
+                    <p:dataTable var="user" value="#{employeeController.findUsers()}"  scrollable="true" scrollHeight="250">
+                        <p:column headerText="Imie">
+                            <h:outputText value="#{user.firstName}"/>
+                        </p:column>
+                        <p:column headerText="Nazwisko">
+                            <h:outputText value="#{user.lastName}"/>
+                        </p:column>
+                        <p:column headerText="Login">
+                            <h:outputText value="#{user.login}"/>
+                        </p:column>
+                        <p:column headerText="Hasło">
+                            <h:outputText value="#{user.pass}"/>
+                        </p:column>
+                    </p:dataTable>
+                </div>
             </h:form>
         </div>
     </div>
